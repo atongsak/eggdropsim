@@ -4,7 +4,7 @@ Ever since I had to do the egg drop test in middle school, I've always wondered,
 
 With this web-based 3D egg drop simulator, parents and educators can effortlessly prepare for physics lessons, sparing themselves both these questions and a carton of eggs.
 
-<img src="readme/eggdrop.gif" width=1000px>
+<img src="readme/egg.gif" width=1000px>
 
 # How to Install & Use
 
