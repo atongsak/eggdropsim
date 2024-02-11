@@ -2,7 +2,7 @@
 
 Ever since I had to do the egg drop test in middle school, I've always wondered, "Do we *really* need to drop a bunch of eggs off the roof of a building to teach kids physics? *In this economy?*" 
 
-With this web-based 3D egg drop simulator, parents and educators can effortlessly prepare for physics lessons, sparing both these questions and a carton of eggs.
+With this web-based 3D egg drop simulator, parents and educators can effortlessly prepare for physics lessons, sparing themselves both these questions and a carton of eggs.
 
 <img src="readme/egg.gif" width=1000px>
 
