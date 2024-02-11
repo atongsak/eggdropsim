@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js"
+      }
+    }
+  </script>
+  <head>
+    <meta charset="utf-8">
+    <title>Egg Drop Simulator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="setup.js" charset="utf-8" defer></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+  </head>
+  <body>
+        <div class="experiment-container">
+
+            <div class="experiment-title">
+                <h1>Experimental Conditions</h1>
+            </div>
+
+            <div class="description">
+                <p>The currently selected set of conditions for the egg drop are highlighted in <b>yellow</b>. Click any button to modify the conditions.</p>
+            </div>
+
+            <div class="conditions">
+                <div class="condition">
+                    <h2 class="condition-h2">Egg Size:</h2>
+                    <div class="size-buttons" category="egg-size">
+                        <button type="button" id="small-egg">Small</button>
+                        <button type="button" id="large-egg">Large</button>
+                        <button type="button" id="jumbo-egg">Jumbo</button>
+                    </div>
+                </div>
+                
+                <div class="condition">
+                    <h2 class="condition-h2">Drop Height:</h2>
+                    <div class="size-buttons" category="drop-height">
+                        <button type="button" id="meter">1 meter</button>
+                        <button type="button" id="fivemeters">5 meters</button>
+                        <button type="button" id="tenmeters">10 meters</button>
+                    </div>
+                </div> 
+               
+                <div class="condition">
+                    <h2 class="condition-h2">Landing Surface:</h2>
+                    <div class="size-buttons" category="landing-surface">
+                        <button type="button" id="hard">Hard floor</button>
+                        <button type="button" id="inchfoam">1-inch foam</button>
+                        <button type="button" id="foambox">Foam box</button>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="description">
+                <p>Once satisfied with the selected conditions, click on the <b>Run Trial</b> button.</p>
+            </div>
+        
+            <div>
+                <button type="button" id="runtrial">Run Trial</button>
+            </div>
+            
+        </div>
+  </body>
+</html>

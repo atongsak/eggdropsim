@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'nunito';
+  src: url('Nunito/Nunito-ExtraBold.ttf') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'nunito';
+  src: url('Nunito/Nunito-Medium.ttf') format('woff2');
+  font-weight: 200;
+}
+
+@keyframes fade-in{
+  from { opacity: 0 }
+  to {  opacity: 100% }
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'nunito';
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'nunito';
+  font-weight: 100;
+  margin: 0;
+}
+
+p {
+  font-family: 'nunito';
+  font-weight: 200;
+  margin: 0px;
+}
+
+#eggvideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.content {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.welcome-container {
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  animation: fade-in 3s forwards;
+  animation-delay: 3s;
+  /* color: black; */
+  color: white;
+}
+/* 
+.experiment-container {
+  text-align: center; 
+  z-index: 1;
+} */
+
+.experiment-container {
+  text-align: center;
+  position: absolute;
+  top: 49.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+}
+
+.title {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20vh;
+  font-size: 3vw;
+  padding-bottom: 0px;
+}
+
+.experiment-title {
+  display: grid;
+  width: 100%;
+  font-size: 2vw;
+}
+
+.description {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.5vw;
+  /* font-size: 3em; */
+  margin-top: 2px;
+  margin-bottom: 15px;
+}
+
+.start-button-container {
+  margin-bottom: 5vh; 
+}
+
+button {
+  font-family: 'nunito';
+  font-weight: 200;
+  padding: 5px 20px;
+  cursor: pointer;
+  
+  border: none;
+  border-radius: 5px;
+}
+
+/* button:hover {
+  color: white;
+  background-color: black;
+} */
+
+#begin-button {
+  font-size: 2vw;
+  color: black;
+}
+
+#begin-button:hover {
+  color: white;
+  background-color: black;
+}
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.condition {
+  margin-bottom: 14px;
+}
+
+.size-buttons {
+  display: flex;
+  flex-direction: left; 
+  align-items: flex-start; 
+  margin-top: 15px;
+}
+
+button {
+  margin: 0 5px; /* Adjust spacing between buttons */
+}
+
+#small-egg, #large-egg, #jumbo-egg,
+#meter, #fivemeters, #tenmeters,
+#hard, #inchfoam, #foambox {
+  font-size: 2vw;
+}
+
+#runtrial {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#runtrial:hover {
+  background-color: #f5c542;
+}
+
+button.selected {
+  background-color: #f5c542;
+}

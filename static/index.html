@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js"
+      }
+    }
+  </script>
+  <head>
+    <meta charset="utf-8">
+    <title>Egg Drop Simulator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js" charset="utf-8" defer></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+  </head>
+  
+  <body>
+    <video autoplay muted loop id="eggvideo">
+      <source src="eggdrop.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+
+			<div class="welcome-container">
+				<div class="title">
+					<h1>egg drop simulator</h1>
+				</div>
+
+				<div class="description">
+				  <p>the egg drop test, built for the web</p>
+				</div>
+	
+				<div class="start-button-container">
+					<button type="button" id="begin-button">Enter</button>
+				</div>
+			</div>
+
+		</div>
+  </body>
+</html>
