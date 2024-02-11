@@ -136,7 +136,7 @@ button {
 
 #begin-button:hover {
   color: white;
-  background-color: black;
+  background-color: #f5c542;
 }
 
 .conditions {
@@ -175,6 +175,7 @@ button {
 
 #runtrial:hover {
   background-color: #f5c542;
+  color: white;
 }
 
 button.selected {
