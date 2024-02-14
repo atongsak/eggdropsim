@@ -15,6 +15,10 @@ app.get("/setup", function (req, res, next) {
     res.status(200).sendFile(__dirname + "/static/setup.html")
 })
 
+app.get("/activity", function (req, res, next) {
+    res.status(200).sendFile(__dirname + "/static/activity.html")
+})
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function(){
