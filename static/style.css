@@ -149,6 +149,8 @@ button {
 
 .condition {
   margin-bottom: 14px;
+  font-family: 'nunito';
+  font-weight: 200;
 }
 
 .size-buttons {

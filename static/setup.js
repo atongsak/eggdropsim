@@ -1,4 +1,4 @@
-var selectedConditions = {
+var newData = {
     size: "small-egg",
     height: "meter",
     surface: "hard"
@@ -11,19 +11,41 @@ for(var i = 0; i < buttons.length; i++){
 
 document.getElementById('runtrial').addEventListener('click', function(){
     console.log("run trial");
-    localStorage.setItem('selectedConditions', JSON.stringify(selectedConditions));
-    window.location.href = '/activity';
+
+    // Make a request to the server to update selectedConditions
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/setup', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                // Server response, if needed
+                var response = JSON.parse(xhr.responseText);
+                console.log("Server response:", response.message);
+            } else {
+                console.error("Error:", xhr.status, xhr.statusText);
+            }
+        }
+    };
+
+    // Send the updated data to the server
+    xhr.send(JSON.stringify({ newData }));
+
+    // Redirect to '/activity' 
+    setTimeout(function(){    
+        window.location.href = '/activity';
+    }, 4000);
 });
 
 selectButtonById("small-egg")
 selectButtonById("meter")
 selectButtonById("hard")
 
-console.log(selectedConditions);
+console.log(newData);
 
 function buttonClickHandler(event) {
     console.log("== The button was clicked");
-    // console.log(" -- event.target:", event.target);
 
     var clickedButton = event.target;
     var box = clickedButton.parentNode;
@@ -31,8 +53,6 @@ function buttonClickHandler(event) {
     // Store the selected button's id and category in variables or data attributes
     var selectedCategory = box.getAttribute("category");
     var selectedButtonId = clickedButton.id;
-
-    // var isSelected = clickedButton.classList.contains("selected");
 
     if(!clickedButton.classList.contains("selected") && selectedCategory != null){
         clickedButton.classList.toggle("selected");
@@ -48,14 +68,14 @@ function buttonClickHandler(event) {
         console.log(" -- Selected Category:", selectedCategory);
 
         if(selectedCategory == "size"){
-            selectedConditions.size = selectedButtonId;
+            newData.size = selectedButtonId;
         } else if(selectedCategory == "height"){
-            selectedConditions.height = selectedButtonId;
+            newData.height = selectedButtonId;
         } else if(selectedCategory == "surface") {
-            selectedConditions.surface = selectedButtonId;
+            newData.surface = selectedButtonId;
         }
 
-        console.log(selectedConditions);
+        console.log(newData);
     }
 
     event.stopPropagation();
