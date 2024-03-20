@@ -5,7 +5,7 @@ const readline = require('readline')
 
 // var logger = require("./lib/logger")
 
-app.use(logger)
+// app.use(logger)
 
 app.use(express.static("static"))
 app.use(express.json())
