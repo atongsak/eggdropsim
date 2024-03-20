@@ -80,11 +80,6 @@ def check_parameters(file_path):
     force = mass * (delta_v/time)  # sig figs: 1, unit: N
     final_force = round(force, 1)
 
-    # print(mass)
-    # print(delta_v)
-    # print(time)
-    # print(final_force)
-
     f=open("results.txt", "w")
 
     # check if egg broke
@@ -106,14 +101,16 @@ def check_parameters(file_path):
 
 def main():
     file_path = "parameters.json"
-    # poll_interval = 3 # seconds
+    poll_interval = 3 # seconds
 
-    if os.path.exists(file_path):
-        while True: 
-            check_parameters(file_path)
-            # time.sleep(poll_interval)
-    else:
-        print("Invalid file path.")
+    while True:
+        if os.path.exists(file_path):
+            while True: 
+                check_parameters(file_path)
+                # time.sleep(poll_interval)
+        else:
+            print(file_path + " does not exist yet.")
+            time.sleep(poll_interval)
 
 # Ensures that main() is only executed when the script is run directly and not when imported as a module
 if __name__ == "__main__":
