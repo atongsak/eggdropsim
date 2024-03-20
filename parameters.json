@@ -1,5 +1,5 @@
 {
-  "size": "jumbo-egg",
-  "height": "tenmeters",
-  "surface": "foambox"
+  "size": "small-egg",
+  "height": "meter",
+  "surface": "hard"
 }
