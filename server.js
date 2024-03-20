@@ -3,7 +3,7 @@ const fs = require('fs')
 const app = express()
 const readline = require('readline')
 
-var logger = require("./lib/logger")
+// var logger = require("./lib/logger")
 
 app.use(logger)
 
