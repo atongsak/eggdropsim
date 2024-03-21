@@ -32,10 +32,8 @@ document.getElementById('runtrial').addEventListener('click', function(){
     // Send the updated data to the server
     xhr.send(JSON.stringify({ newData }));
 
-    // Redirect to '/activity' 
-    setTimeout(function(){    
-        window.location.href = '/activity';
-    }, 4000);
+    // Redirect to loading page
+    window.location.href = '/loadingpage';
 });
 
 selectButtonById("small-egg")

@@ -107,7 +107,7 @@ def main():
         if os.path.exists(file_path):
             while True: 
                 check_parameters(file_path)
-                # time.sleep(poll_interval)
+                time.sleep(poll_interval)
         else:
             print(file_path + " does not exist yet.")
             time.sleep(poll_interval)

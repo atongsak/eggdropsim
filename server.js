@@ -50,7 +50,13 @@ app.post("/setup", function(req, res, next) {
     res.status(200).json({ message: "Selected conditions updated successfully." })
 })
 
+app.get("/loadingpage", function(req, res, next) {
+    res.status(200).sendFile(__dirname + "/static/loadingpage.html")
+})
+
 app.get("/activity", function(req, res, next) {
+    // res.status(202).sendFile(__dirname + "/static/loadingpage.html")
+
     const rl = readline.createInterface({
         input: fs.createReadStream("results.txt")
     })
@@ -94,13 +100,13 @@ app.get("/activity", function(req, res, next) {
         setTimeout(function(){
             console.log(data)
             res.status(200).sendFile(__dirname + "/static/activity.html")
-        }, 4000)
+        }, 2000)
     })
 })
 
 app.get("/getData", function(req, res) {
     res.json(data); 
-});
+})
 
 const PORT = process.env.PORT || 3000;
 
