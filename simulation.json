@@ -14,6 +14,36 @@
         "height": "tenmeters",
         "surface": "hard",
         "video": "hard10m.mp4"
+      },
+      {
+        "height": "meter",
+        "surface": "inchfoam",
+        "video": "foam1m.mp4"
+      },
+      {
+        "height": "fivemeters",
+        "surface": "inchfoam",
+        "video": "foam5m.mp4"
+      },
+      {
+        "height": "tenmeters",
+        "surface": "inchfoam",
+        "video": "foam10m.mp4"
+      },
+      {
+        "height": "meter",
+        "surface": "foambox",
+        "video": "box1m.mp4"
+      },
+      {
+        "height": "fivemeters",
+        "surface": "foambox",
+        "video": "box5m.mp4"
+      },
+      {
+        "height": "tenmeters",
+        "surface": "foambox",
+        "video": "box10m.mp4"
       }
     ]
 }

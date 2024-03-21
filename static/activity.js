@@ -25,3 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error fetching data:", error));
 });
+
+document.getElementById('back-button').addEventListener('click', function(){
+    console.log("button has been pressed");
+  
+    window.location.href = '/setup';
+});

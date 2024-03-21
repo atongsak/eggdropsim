@@ -148,6 +148,17 @@ button {
   color: black;
 }
 
+#back-button {
+  font-size: 2vw;
+  color: black;
+}
+
+#back-button:hover {
+  color: white;
+  background-color: #f5c542;
+}
+
+
 #begin-button:hover {
   color: white;
   background-color: #f5c542;
