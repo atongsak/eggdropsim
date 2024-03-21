@@ -1,6 +1,7 @@
-// When begin button is pressed
-document.getElementById('begin-button').addEventListener('click', function(){
-    console.log("button has been pressed");
-  
+document.getElementById('begin-button').addEventListener('click', function(){  
     window.location.href = '/setup';
+});
+
+document.getElementById('about-button').addEventListener('click', function(){  
+    window.location.href = '/about';
 });

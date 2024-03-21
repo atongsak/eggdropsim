@@ -1,4 +1,3 @@
-const { match } = require("assert")
 const express = require("express")
 const fs = require('fs')
 const app = express()
@@ -26,6 +25,10 @@ let data = {
 
 app.get("/", function (req, res, next) {
     res.status(200).sendFile(__dirname + "/static/index.html")
+})
+
+app.get("/about", function (req, res, next) {
+    res.status(200).sendFile(__dirname + "/static/about.html")
 })
 
 app.get("/setup", function (req, res, next) {
@@ -113,7 +116,6 @@ function readResultsFile() {
         }
 
         selectSimulation()
-        console.log("is this enakelfnl")
     })
 }
 
