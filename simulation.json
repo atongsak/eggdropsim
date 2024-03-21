@@ -1,0 +1,19 @@
+{
+    "simulations": [
+      {
+        "height": "meter",
+        "surface": "hard",
+        "video": "hard1m.mp4"
+      },
+      {
+        "height": "fivemeters",
+        "surface": "hard",
+        "video": "hard5m.mp4"
+      },
+      {
+        "height": "tenmeters",
+        "surface": "hard",
+        "video": "hard10m.mp4"
+      }
+    ]
+}

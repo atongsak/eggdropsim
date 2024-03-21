@@ -32,6 +32,13 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  font-family: 'nunito';
+  font-weight: 100;
+  margin: 0;
+}
+
+
 p {
   font-family: 'nunito';
   font-weight: 200;
@@ -70,11 +77,6 @@ p {
   /* color: black; */
   color: white;
 }
-/* 
-.experiment-container {
-  text-align: center; 
-  z-index: 1;
-} */
 
 .experiment-container {
   text-align: center;
@@ -82,6 +84,15 @@ p {
   top: 49.5%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 5px;
+}
+
+.activity-container {
+  text-align: left;
+  position: absolute;
+  margin-left: 5%;
+  top: 20%;
+  font-size: 1.2vw;
   padding: 5px;
 }
 
@@ -96,8 +107,17 @@ p {
 
 .experiment-title {
   display: grid;
+  text-align: center;
   width: 100%;
-  font-size: 2vw;
+  font-size: 1.5vw;
+  /* margin-top: 40px; */
+}
+
+.activity-title {
+  text-align: center;
+  width: 100%;
+  font-size: 1.5vw;
+  padding-top: 40px;
 }
 
 .description {
@@ -145,6 +165,18 @@ button {
   margin-bottom: 14px;
   font-family: 'nunito';
   font-weight: 200;
+}
+
+.equation {
+  text-align: center;
+  position: absolute;
+  /* top: 89%; */
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'nunito';
+  font-weight: 200;  
+  font-size: 1.4vw;
 }
 
 .loading-text {

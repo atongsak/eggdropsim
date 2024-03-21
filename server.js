@@ -1,11 +1,8 @@
+const { match } = require("assert")
 const express = require("express")
 const fs = require('fs')
 const app = express()
 const readline = require('readline')
-
-// var logger = require("./lib/logger")
-
-// app.use(logger)
 
 app.use(express.static("static"))
 app.use(express.json())
@@ -23,7 +20,8 @@ let data = {
     final_force: 0.0,
     mass: 0.0,
     height: 0.0,
-    surface: "hard"
+    surface: "hard", 
+    simulation: "hard1m.mp4"
 }
 
 app.get("/", function (req, res, next) {
@@ -55,8 +53,25 @@ app.get("/loadingpage", function(req, res, next) {
 })
 
 app.get("/activity", function(req, res, next) {
-    // res.status(202).sendFile(__dirname + "/static/loadingpage.html")
+    readResultsFile()
+    setTimeout(function(){
+        console.log(data)
+        res.status(200).sendFile(__dirname + "/static/activity.html")
+    }, 2000)
+})
 
+app.get("/getData", function(req, res) {
+    
+    res.json(data); 
+})
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, function(){
+    console.log(`Server is listening on port ${PORT}`)
+})
+
+function readResultsFile() {
     const rl = readline.createInterface({
         input: fs.createReadStream("results.txt")
     })
@@ -92,24 +107,38 @@ app.get("/activity", function(req, res, next) {
         if(selectedConditions.surface == "hard"){
             data.surface = "Hard floor"
         } else if(selectedConditions.surface == "inchfoam"){
-            data.surface = "1 inch foam"
+            data.surface = "1-inch foam"
         } else{
             data.surface = "Foam box"
         }
-        
-        setTimeout(function(){
-            console.log(data)
-            res.status(200).sendFile(__dirname + "/static/activity.html")
-        }, 2000)
+
+        selectSimulation()
+        console.log("is this enakelfnl")
     })
-})
+}
 
-app.get("/getData", function(req, res) {
-    res.json(data); 
-})
+function selectSimulation() {
+    fs.readFile('simulation.json', 'utf8', (err, jsonData) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return;
+        }
 
-const PORT = process.env.PORT || 3000;
+        // Parse the JSON data
+        const simulationData = JSON.parse(jsonData);
 
-app.listen(PORT, function(){
-    console.log(`Server is listening on port ${PORT}`)
-})
+        console.log(selectedConditions.height)
+        console.log(selectedConditions.surface)
+
+        const matchedSimulation = simulationData.simulations.find(simulation => {
+            return simulation.height === selectedConditions.height && 
+                   simulation.surface === selectedConditions.surface;
+        });
+
+        // If a matching simulation is found, set the simulation video
+        if (matchedSimulation) {
+            data.simulation = matchedSimulation.video;
+            console.log(data.simulation);
+        }
+    });
+}

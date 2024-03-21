@@ -8,23 +8,29 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
   </head>
   <body>
-        <div class="experiment-container">
 
-            <div class="experiment-title">
-                <h1>The Egg Drop Activity</h1>
-            </div>
+    <video autoplay muted loop id="eggvideo"><source src="" type="video/mp4"></video>
 
-            <h2 class="condition-h2">Experimental Conditions:</h2>
+    <div class="activity-title">
+        <h1>The Egg Drop Activity</h1>
+        <h3><div id="equation"></div></h3>
+    </div>
 
-            <h3 class="condition">
-                <div id="display-size"></div>
-                <div id="display-height"></div>
-                <div id="display-surface"></div>
-                <div id="equation"></div>
-            </h3>
+    <div class="activity-container">
+        <h2><b>Experimental Conditions:</b></h2>
+        <h3 class="condition">
+            <div id="display-conditions"></div>
+        </h3>
 
-            <!-- Displays a message indicating whether the egg is broken or not -->
-            <h2 class="condition" id="egg-survival"></h2>            
-        </div>
+        <h2><b>Results:</b></h2>
+        <h3 class="condition">
+            <div id="display-results"></div>
+        </h3>        
+
+        <!-- Displays a message indicating whether the egg is broken or not -->
+        <h2 class="condition" id="egg-survival"></h2>            
+    </div>
+
+    <h3 class="equation"></h3>
   </body>
 </html>
